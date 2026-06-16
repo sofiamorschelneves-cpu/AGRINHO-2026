@@ -1,10 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-    inicializarQuizModerno();
-    inicializarContatoModerno();
-});
-
 /**
- * Lógica do Quiz com Feedback Visual em Cartão Moderno
+ * Lógica do Quiz com Feedback Visual em Cartão Moderno (Versão Corrigida)
  */
 function inicializarQuizModerno() {
     const botaoResponder = document.querySelector("#quiz button");
@@ -38,16 +33,24 @@ function inicializarQuizModerno() {
             return;
         }
 
-        // Validação usando o valor ou o texto do nó
-        const respostaTexto = opcaoSelecionada.value || opcaoSelecionada.nextSibling.textContent.trim();
+        // Pega o valor do input ou o texto ao lado dele
+        const textoOriginal = opcaoSelecionada.value || opcaoSelecionada.nextSibling.textContent;
+        
+        // Normaliza o texto: remove acentos e deixa tudo em letras minúsculas
+        const textoNormalizado = textoOriginal
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
 
-        if (respostaTexto.includes("Irrigacao Inteligente")) {
+        // Faz a validação sem se preocupar com acentos ("irrigacao inteligente")
+        if (textoNormalizado.includes("irrigacao inteligente")) {
             cardFeedback.innerText = "🎉 Excelente escolha! A Irrigação Inteligente monitora as condições do solo em tempo real e evita o desperdício crítico de recursos hídricos.";
             cardFeedback.style.color = "var(--success, #2e7d32)";
             cardFeedback.style.backgroundColor = "var(--success-bg, #e8f5e9)";
             cardFeedback.style.borderLeft = "4px solid var(--success, #2e7d32)";
         } else {
-            cardFeedback.innerText = "❌ Essa não é a alternativa correta. Dica: foque nas tecnologias voltadas diretamente para a preservação e economia da água!";
+            cardFeedback.innerText = "❌ Essa não é a alternativa correta. Tente novamente! Dica: foque nas tecnologias voltadas diretamente para a preservação e economia da água.";
             cardFeedback.style.color = "var(--error, #e53935)";
             cardFeedback.style.backgroundColor = "var(--error-bg, #ffebee)";
             cardFeedback.style.borderLeft = "4px solid var(--error, #e53935)";
