@@ -41,7 +41,7 @@ function inicializarQuizModerno() {
         // Validação usando o valor ou o texto do nó
         const respostaTexto = opcaoSelecionada.value || opcaoSelecionada.nextSibling.textContent.trim();
 
-        if (respostaTexto.includes("Irrigação Inteligente")) {
+        if (respostaTexto.includes("Irrigacao Inteligente")) {
             cardFeedback.innerText = "🎉 Excelente escolha! A Irrigação Inteligente monitora as condições do solo em tempo real e evita o desperdício crítico de recursos hídricos.";
             cardFeedback.style.color = "var(--success, #2e7d32)";
             cardFeedback.style.backgroundColor = "var(--success-bg, #e8f5e9)";
