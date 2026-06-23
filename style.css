@@ -29,8 +29,13 @@ html {
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.7;
-    background-color: var(--bg-site);
     color: var(--text-dark);
+    
+    /* Configuração da imagem de fundo global */
+    background-image: linear-gradient(rgba(244, 247, 245, 0.85), rgba(244, 247, 245, 0.85)), url('sua-imagem-de-fundo.jpg');
+    background-attachment: fixed; /* Mantém o fundo estático ao rolar a página */
+    background-size: cover;        /* Redimensiona para cobrir toda a tela */
+    background-position: center;   /* Centraliza o fundo */
 }
 
 /* Ocultar linhas divisórias antigas (Visual mais limpo) */
@@ -271,10 +276,26 @@ footer p:first-child {
         border-radius: 6px;
         text-align: center;
     }
+/* Container e comportamento da imagem interna */
+.container-imagem {
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
 
-    body > section {
-        margin: 15px;
-        padding: 20px;
-    }
+.container-imagem img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+body > section:hover .container-imagem img {
+    transform: scale(1.02);
+}
 }
 
