@@ -134,3 +134,8 @@ function inicializarContatoModerno() {
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarQuizModerno();
+    inicializarContatoModerno();
+});
