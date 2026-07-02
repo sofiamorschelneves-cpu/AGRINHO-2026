@@ -281,21 +281,17 @@ footer p:first-child {
     }
 /* Container e comportamento da imagem interna */
 .container-imagem {
-    width: 100%;
-    margin: 20px 0;
-    overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    max-width: 500px;   /* limita o tamanho */
+    margin: 20px auto;  /* centraliza o bloco */
+    text-align: center; /* garante alinhamento */
 }
 
 .container-imagem img {
-    width: 70%; /* diminui o tamanho */
-    max-height: 250px;
-    display: block;
-    margin: 0 auto; /* centraliza */
+    width: 100%;        /* ocupa o container */
+    height: 220px;      /* altura fixa menor */
+    object-fit: cover;  /* mantém proporção bonita */
     border-radius: 12px;
-    object-fit: cover;
-    transition: var(--transition);
+    display: block;
 }
 
 body > section:hover .container-imagem img {
