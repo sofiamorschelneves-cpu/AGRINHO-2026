@@ -289,11 +289,12 @@ footer p:first-child {
 }
 
 .container-imagem img {
-    width: 100%;
-    height: auto;
-    max-height: 350px;
-    object-fit: cover;
+    width: 70%; /* diminui o tamanho */
+    max-height: 250px;
     display: block;
+    margin: 0 auto; /* centraliza */
+    border-radius: 12px;
+    object-fit: cover;
     transition: var(--transition);
 }
 
