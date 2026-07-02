@@ -31,11 +31,14 @@ body {
     line-height: 1.7;
     color: var(--text-dark);
     
-    /* Configuração da imagem de fundo global */
-    background-image: linear-gradient(rgba(244, 247, 245, 0.85), rgba(244, 247, 245, 0.85)), url('1000128652.jpg');
-    background-attachment: fixed; /* Mantém o fundo estático ao rolar a página */
-    background-size: cover;        /* Redimensiona para cobrir toda a tela */
-    background-position: center;   /* Centraliza o fundo */
+      background-image: linear-gradient(
+        rgba(244, 247, 245, 0.85),
+        rgba(244, 247, 245, 0.85)
+    ), url('assets/1000128652.jpg');
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 /* Ocultar linhas divisórias antigas (Visual mais limpo) */
