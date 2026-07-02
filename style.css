@@ -281,16 +281,17 @@ footer p:first-child {
     }
 /* Container e comportamento da imagem interna */
 .container-imagem {
-    max-width: 500px;   /* limita o tamanho */
-    margin: 20px auto;  /* centraliza o bloco */
-    text-align: center; /* garante alinhamento */
+    max-width: 500px;     /* limita o tamanho */
+    margin: 20px auto;    /* centraliza */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 .container-imagem img {
-    width: 100%;        /* ocupa o container */
-    height: 220px;      /* altura fixa menor */
-    object-fit: cover;  /* mantém proporção bonita */
-    border-radius: 12px;
+    width: 100%;
+    height: 220px;        /* altura controlada */
+    object-fit: cover;    /* corta sem distorcer */
     display: block;
 }
 
